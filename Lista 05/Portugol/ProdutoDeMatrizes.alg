@@ -5,7 +5,7 @@ algoritmo "ProdutoDeMatrizes"
 var
 MatrizA: vetor[1..3,1..2] de Inteiro
 MatrizB: vetor[1..2,1..5] de Inteiro
-MatrizC: vetor[1..3] de Inteiro
+MatrizC: vetor[1..3,1..5] de Inteiro
 i, j, k: Inteiro
 inicio
 //Preenchendo a Matriz A
@@ -26,6 +26,7 @@ para i <- 1 ate 2 faca
 
         escreva("Digite um valor: ")
         leia(MatrizB[i,j])
+        escreval(MatrizB[i,j])
     FimPara
 FimPara
 LimpaTela
@@ -33,7 +34,7 @@ LimpaTela
 para i <- 1 ate 3 faca
     para j <- 1 ate 5 faca
         para k <- 1 ate 2 faca
-            MatrizC[i,j] <- MatrizC[i,j] + (MatrizA[i,k] * MatrizB[k,j])
+            MatrizC[i,j] <- (MatrizC[i,j] + (MatrizA[i,k] * MatrizB[k,j]))
         FimPara
     FimPara
 FimPara
