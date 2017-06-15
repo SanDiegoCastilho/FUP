@@ -6,7 +6,7 @@ var
 matriz: vetor[1..3,1..5] de Inteiro
 i, j, DP, DP1, DP2, DP3, DS1, DS2, DS3, DS, Determinante: Inteiro
 inicio
-
+// Preenche a matriz com números digitados pelo usuário
 para i <- 1 ate 3 faca
     para j <- 1 ate 3 faca
         escreva("Digite os valores da matriz: ")
@@ -14,12 +14,14 @@ para i <- 1 ate 3 faca
     FimPara
 FimPara
 
+//Acrescenta duplica as duas primeiras colunas e acrescenta no final da matriz
 para i <- 1 ate 3 faca
     para j <- 4 ate 5 faca
         matriz[i,j] <- matriz[i, j-3]
     FimPara
 FimPara
 
+//Inicializa as variáveis necessárias para o cálculo das diagonais principais e secundárias
 DP1 <- 1
 DP2 <- 1
 DP3 <- 1
@@ -27,6 +29,7 @@ DS1 <- 1
 DS2 <- 1
 DS3 <- 1
 
+//Inicializa as variáveis necessárias para o cálculo das diagonais principais e secundárias
 para i <- 1 ate 3 faca
     para j <- 1 ate 5 faca
 
@@ -56,10 +59,12 @@ para i <- 1 ate 3 faca
     FimPara
 FimPara
 
+//Por fim, calcula o valor da determinante de acordo com as somas das diagonais principais e secundárias
 DP <- DP1 + DP2 + DP3
 DS <- DS1 + DS2 + DS3
 Determinante <- DP - DS
 
+//Mostra a matriz e sua determinante
 para i <- 1 ate 3 faca
     para j <- 1 ate 5 faca
         escreva(matriz[i,j]," ")
